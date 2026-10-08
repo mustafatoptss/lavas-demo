@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lavaş — Restoranlar için toptan lavaş</title>
+  <meta name="description" content="Her gün taze, ince, elde açılmış lavaş. Restoranınıza toptan teslim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Yükleme ekranı: ilk kareler gelene kadar -->
+  <div class="loader" id="loader">
+    <div class="loader__ring"></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+
+  <header class="nav">
+    <a class="nav__brand" href="#">MARKA</a>
+    <a class="nav__cta" href="#teklif">Teklif Al</a>
+  </header>
+
+  <!-- Scroll ile oynayan sahne. Yüksekliği style.css'teki --scroll-length belirler -->
+  <section class="scrolly" id="scrolly">
+    <div class="scrolly__sticky">
+      <canvas class="scrolly__canvas" id="canvas"></canvas>
+      <img class="finale" id="finale" src="img/durum.webp" alt="">
+      <div class="scrolly__vignette"></div>
+
+      <!-- Metin katmanları: data-in / data-out = scroll ilerlemesi (0–1) -->
+      <div class="beat beat--center" data-in="0" data-out="0.08">
+        <p class="eyebrow">Her sabah tandırdan</p>
+        <h1 class="display">Sıcacık.<br><em>İncecik.</em></h1>
+        <p class="lede">Elde açılmış, gün içinde taze teslim edilen lavaş.</p>
+        <div class="scroll-hint"><span></span>Kaydır</div>
+      </div>
+
+      <div class="beat beat--left" data-in="0.12" data-out="0.3">
+        <p class="eyebrow">01 — Hamur</p>
+        <h2 class="headline">Kâğıt inceliğinde,<br><em>kumaş kadar esnek.</em></h2>
+        <p class="body">Sarıldığında çatlamayan, ısıtıldığında kurumayan lavaş.</p>
+      </div>
+
+      <div class="beat beat--right" data-in="0.34" data-out="0.8">
+        <p class="eyebrow">02 — Malzeme</p>
+        <h2 class="headline">Ne koyarsanız<br><em>taşır.</em></h2>
+        <ul class="ingredients">
+          <li data-at="0.39">Adana kebap</li>
+          <li data-at="0.51">Domates</li>
+          <li data-at="0.62">Közlenmiş biber</li>
+          <li data-at="0.65">Sumaklı soğan</li>
+          <li data-at="0.73">Maydanoz</li>
+        </ul>
+      </div>
+
+      <div class="beat beat--final" data-in="0.9" data-out="1.01">
+        <p class="eyebrow">Sarılır, dağılmaz — restoranlar için</p>
+        <h2 class="display display--sm">Toptan lavaş,<br><em>her gün kapınızda.</em></h2>
+        <div class="actions" id="teklif">
+          <a class="btn btn--primary" href="#">Teklif Al</a>
+          <a class="btn btn--ghost" href="#">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
